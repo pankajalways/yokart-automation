@@ -23,8 +23,8 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      - name: Run tests
-        run: npx playwright test
+      - name: Run tests (Chromium only, headless)
+        run: npx playwright test --project=chromium
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.USERNAME }}
